@@ -52,28 +52,6 @@ function Decision() {
   function correct() {
     alert('correct');
     setChoices(choices+1)
-    // function Difficult() {
-    //   let displayer = [];
-    //   const selected = Math.random();
-    //   if (selected === 1) {
-    //     window.location.reload()
-    //     return;
-    //   }
-
-    //   for (let btn=0; btn<=choices; btn++) {
-    //     if (btn === Math.floor(selected*1)) {
-    //       displayer.push(<button>5</button>);
-    //       console.log('selected');
-    //     }
-    //     else {
-    //       displayer.push(<button>6</button>);
-    //     }
-    //     if ((btn+1)%5 === 0) {
-    //       displayer.push(<br/>)
-    //     }
-    //   }
-    // }
-    // Difficult();
   }
   function wrong() {
     alert('wrong');
@@ -173,34 +151,6 @@ function Pairing() {
   }
 
   return display;
-  
-  
-
-  // let select = Math.random();
-  // while (cards[Math.floor(select * num**2)].color !== "g") {
-  //   select = Math.random();
-  // }
-  // console.log(cards);
-  // for (let count = 0; count < 4; count++) {
-  //   if (count < 2) {
-  //     cards[Math.floor(select * 4)].color = 'r';
-  //     console.log(cards[0]);
-  //     cards[0].color = 'r';
-  //     console.log(cards[0]);
-  //     console.log('card');
-  //     console.log(cards);
-  //   } else if (count < 4) {
-  //     console.log('b')
-  //     cards[Math.floor(select * 4)].color = 'b';
-  //   }
-  // }  
-  // const display = [];
-  // console.log('cards');
-  // console.log(cards);
-  // for (let element of cards) {
-  //   display.push(<button>{element.color}</button>);
-  // }
-  // return(display);
 }
 
 export default function App() {
