@@ -154,8 +154,6 @@ function Pairing() {
 }
 
 export default function App() {
-  const [clear, setClear] = useState(false);
-
   return (
     <div>
     <HashRouter>
