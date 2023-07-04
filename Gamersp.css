@@ -1,0 +1,21 @@
+.choice:hover {
+    background-color: yellowgreen;
+}
+.reload {
+    height: 100px;
+    padding: 10px;
+}
+
+.menus {
+    position: absolute;
+    outline: 1px dashed;
+    width: 0px;
+    height: 10px;
+}
+
+.menu {
+    position: absolute;
+    outline: 1px dashed;
+    height: 100px;
+    text-decoration: underline;
+}

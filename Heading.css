@@ -1,0 +1,47 @@
+.centered {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    margin: 0;
+    text-align: center;
+    padding-bottom : 25px;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.h1 {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.h5 {
+  padding-bottom: 0px;
+}
+
+.choice:hover {
+  background-color: yellowgreen;
+}
+.reload {
+  height: 100px;
+  padding: 10px;
+}
+
+
+/* @keyframes slide-enter {
+  0% {
+    transform: translateY(100px);
+    opacity: 0
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1
+  }
+} */
