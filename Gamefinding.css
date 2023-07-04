@@ -1,0 +1,18 @@
+.blink {
+    width: 50px;
+    height: 59px;
+    background-color: coral;
+    transition: 1s;
+    border: none;
+}
+.selection {
+    width: 50px;
+    height: 59px;
+    background-color: green;
+    transition: 1s;
+    border: none;
+}
+.selection:hover {
+    background-color: steelblue;
+    transition: 0s;
+}

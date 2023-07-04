@@ -1,0 +1,81 @@
+.moviesRank {
+  background-color: yellow;
+  margin-bottom: 70px;
+  font-weight: 300;
+  padding: 20px;
+  border-radius: 5px;
+  color: green;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.moviesRank a {
+  display: grid;
+  /* grid-template-columns: minmax(150px, 1fr) 2fr; */
+  /* grid-gap: 20px; */
+  text-decoration: none;
+  color: inherit;
+}
+
+.moviesRank img {
+  position: relative;
+  top: -50px;
+  max-width: 150px;
+  width: 100%;
+  margin-right: 30px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 1),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3);
+}
+
+.rt {
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.items {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-outline-secondary {
+  display: flex;
+  flex-direction: row;
+  width: 350px;
+  height: 150px;
+}
+
+.buttonSvg {
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  align-self: center;
+}
+
+.buttonName {
+  margin: 0;
+  padding: 0;
+  width: 75%;
+  align-self: center;
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+}
+
+.rg li,
+.ry {
+  margin-right: 10px;
+  font-size: 14px;
+}

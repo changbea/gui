@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <style>
+      #output {
+        width: 100%;
+        height: 150px;
+        overflow-y: auto;
+        border: 1px solid #111;
+      }
+    </style>
+  </head>
+  <body>
+    <label>departure</label>
+    <select id="start"></select>
+    <label>destination</label>
+    <select id="end"></select>
+    <label
+      ><input type="radio" name="group" value="adult" checked />adult</label
+    >
+    <label><input type="radio" name="group" value="youth" />youth</label>
+    <label><input type="radio" name="group" value="child" />child</label>
+    <div>
+      <button onclick="calDistance();">fee calculation</button>
+    </div>
+    <div id="output"></div>
+    <script>
+      const subwayList = ["y1", "d1", "h1", "h2", "s1", "e1", "a1", "c1", "s2"];
+      const intervalDistance = 3170;
+
+      function calculate() {
+        const start = document.getElementById("start").value;
+      }
+
+      function loadSubways() {
+        let h = [];
+        for (let idx in subwayList) {
+          h.push(`<option value="${idx}">${subwayList[idx]}</option>`);
+        }
+
+        document.getElementById("start").innerHTML = h.join("");
+        document.getElementById("end").innerHTML = h.join("");
+      }
+
+      function calDistance() {
+        const start = document.getElementById("start").value;
+        const end = document.getElementById("end").value;
+        const type = document.querySelector("[name=group]:checked").value;
+        let output = document.getElementById("output");
+
+        if (start == end) {
+          return output.insertAdjacentHTML(
+            "beforeend",
+            `<p>departure ${subwayList[start]}, destination ${subwayList[end]} are same.</p>`
+          );
+        }
+
+        let stationCount = Math.abs(start - end);
+
+        const distance = stationCount * intervalDistance;
+
+        const cost = calSubwayCost(distance, type);
+
+        output.insertAdjacentHTML("beforeend", `<p>total fee is ${cost}.</p>`);
+        output.scrollTop = output.scrollHeight;
+      }
+
+      function calSubwayCost(distance, type) {
+        const baseAmount =
+          type == "adult"
+            ? 1250
+            : type == "youth"
+            ? 720
+            : type == "child"
+            ? 450
+            : 0;
+        if (distance <= 10000) {
+          return baseAmount;
+        } else if (distance <= 50000) {
+          return baseAmount + Math.ceil((distance - 10000) / 5000) * 100;
+        } else {
+          return (
+            baseAmount +
+            (40000 / 5000) * 100 +
+            Math.ceil((distance - 50000) / 8000) * 100
+          );
+        }
+      }
+
+      window.addEventListener("load", function () {
+        loadSubways();
+      });
+    </script>
+  </body>
+</html>
