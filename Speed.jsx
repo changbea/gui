@@ -11,12 +11,10 @@ export default function Speed() {
   const [stage, setStage] = useState(0);
   const process = [];
   let num;
-  console.log(decision)
   if (decision === false) { 
     number = Math.random();
     decision = true;
   }
-  console.log(number)
   const choices = [];
   const compete = [];
   if (number < 1/3) {
@@ -41,42 +39,32 @@ export default function Speed() {
   }
 
   function Compete(props) {
-    if (choices[0] === 'r') {
-        if (props === 'r') {
+    if (stage < 10) {
+      if (choices[0] === 'r') {
+        if (props === 'p') {
+          setStage(stage+1);
+          decision = false;
         }
-        else if (props === 's') {
-        }
-        else {
-            setStage(stage+1);
-            decision = false;
-        }
-    }
-    else if (choices[0] === 's') {
+      }
+      else if (choices[0] === 's') {
         if (props === 'r') {
             setStage(stage+1);
             decision = false;
         }
-        else if (props === 's') {
-        }
-        else {
-        }
-    }
-    else {    
-        if (props === 'r') {
-        }
-        else if (props === 's') {
+      }
+      else {
+        if (props === 's') {
             setStage(stage+1);
             decision = false;
         }
-        else {
-        }
+      }
     }
   }
-
+  
   function newChoice() {
       window.location.reload(false);
   }
-
+  
   useEffect(() => {
     if (stage < 10) {
       const variableInterval = setInterval(() => {
@@ -140,7 +128,7 @@ export default function Speed() {
     <br />
     <Link to='/speed'>speed</Link>
     <br />
-    <Link to='/speed'>multiple</Link>
+    <Link to='/survival'>survival</Link>
     <br />
     <Link to='/speed'>choose</Link>
     <br />
